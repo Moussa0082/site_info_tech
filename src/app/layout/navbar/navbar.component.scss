@@ -1,0 +1,33 @@
+/* Fond principal */
+header.header-area,
+#header {
+  background-color: #01715D !important;
+  transition: all 0.3s ease;
+}
+
+/* Couleur du texte et des liens */
+header.header-area li,
+header.header-area a {
+  color: #fff !important;
+}
+
+/* Empêche le hover de changer la couleur */
+header.header-area li:hover,
+header.header-area a:hover {
+  color: #fff !important;
+  cursor: pointer;
+  background-color: transparent !important; /* supprime le fond vert du hover */
+}
+
+/* Empêche le routerLinkActive de colorer différemment */
+header.header-area li.active a,
+header.header-area li[routerLinkActive].active a {
+  color: #fff !important;
+  cursor: pointer;
+  background-color: transparent !important;
+}
+
+/* Optionnel : si un thème applique un effet sur .main-menu ul li a:hover::before, on le neutralise */
+header.header-area .main-menu ul li a::before {
+  background: none !important;
+}

@@ -1,0 +1,93 @@
+<section class="vl-about-vission-bg sp2">
+  <div class="container">
+    <div class="row">
+      <!-- Image -->
+      <div class="col-lg-6">
+        <div class="vission-thumb mb-30" data-aos="fade-right" data-aos-duration="1000">
+          <img class="w-100" src="assets/img/about/vl-vission2.png" alt="Vision InfoTECH">
+        </div>
+      </div>
+
+      <!-- Contenu -->
+      <div class="col-lg-6">
+        <div class="vl-vission-content ml-50 mb-30" data-aos="fade-left" data-aos-duration="1000">
+          <div class="vl-section-title-1">
+            <h5 class="subtitle">Notre Mission & Vision</h5>
+            <h2 class="title">Bâtir une société numérique plus inclusive et durable</h2>
+            <p>
+              Nous croyons en un futur où chaque citoyen, quelle que soit son origine,
+              a accès aux compétences, aux outils et à la culture numérique nécessaires
+              pour s’épanouir dans un monde connecté et responsable.
+            </p>
+          </div>
+
+          <!-- Onglets -->
+          <div class="vl-vission-tab2">
+            <ul ngbNav #nav="ngbNav" class="nav nav-pills" id="pills-tab" role="tablist">
+
+              <!-- Mission -->
+              <li ngbNavItem class="nav-item" role="presentation">
+                <button ngbNavLink class="nav-link" id="pills-mission-tab" data-bs-toggle="pill"
+                  data-bs-target="#pills-mission" type="button" role="tab" aria-controls="pills-mission"
+                  aria-selected="true">Notre Mission</button>
+                <ng-template ngbNavContent>
+                  <p class="para">
+                    Promouvoir la culture numérique, la cybersécurité et l’innovation
+                    à travers des programmes de formation, des outils éducatifs et des
+                    projets communautaires accessibles à tous.
+                  </p>
+                  <p class="para pt-20">
+                    Nous formons, sensibilisons et accompagnons les jeunes, les
+                    entrepreneurs et les institutions vers un usage éthique, inclusif
+                    et durable du numérique.
+                  </p>
+                </ng-template>
+              </li>
+
+              <!-- Vision -->
+              <li class="nav-item" ngbNavItem role="presentation">
+                <button ngbNavLink class="nav-link" id="pills-vision-tab" data-bs-toggle="pill"
+                  data-bs-target="#pills-vision" type="button" role="tab" aria-controls="pills-vision"
+                  aria-selected="false">Notre Vision</button>
+                <ng-template ngbNavContent>
+                  <p class="para">
+                    Construire une Afrique où la technologie devient un levier
+                    d’opportunité, d’équité et de développement durable pour tous.
+                  </p>
+                  <p class="para pt-20">
+                    En unissant les forces de la jeunesse, de la créativité et de
+                    l’innovation, nous aspirons à faire du numérique un moteur de
+                    progrès humain et social.
+                  </p>
+                </ng-template>
+              </li>
+
+              <!-- Historique -->
+              <li class="nav-item" ngbNavItem role="presentation">
+                <button ngbNavLink class="nav-link" id="pills-histoire-tab" data-bs-toggle="pill"
+                  data-bs-target="#pills-histoire" type="button" role="tab" aria-controls="pills-histoire"
+                  aria-selected="false">Notre Histoire</button>
+                <ng-template ngbNavContent>
+                  <p class="para">
+                    Née d’une passion commune pour la technologie et l’impact social,
+                    InfoTECH a vu le jour pour répondre aux besoins croissants
+                    d’éducation et d’inclusion numérique au Mali et en Afrique.
+                  </p>
+                  <p class="para pt-20">
+                    Depuis nos débuts, nous collaborons avec des écoles, des
+                    associations et des institutions pour faire du numérique un outil
+                    de développement accessible à tous.
+                  </p>
+                </ng-template>
+              </li>
+            </ul>
+
+            <div class="tab-content" id="pills-tabContent" [ngbNavOutlet]="nav"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>

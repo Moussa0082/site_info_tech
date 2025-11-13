@@ -1,0 +1,83 @@
+<div class="page">
+    <header class="header">
+      <div class="icon-box">
+        📘
+      </div>
+      <div class="header-text">
+        <h1>Protége-toi en ligne 🇲🇱</h1>
+        <p>Version éducative simplifiée de la loi malienne sur la cybercriminalité.</p>
+      </div>
+    </header>
+    
+    
+      <div class="grid">
+        <div class="card" *ngFor="let t of topics; let i = index">
+          <div class="card-header">
+            <div class="icon">
+              <span class="material-icons">{{ t.icon }}</span>
+            </div>
+            <div>
+              <h3>{{ t.title }}</h3>
+              <p class="law">{{ t.law }}</p>
+            </div>
+          </div>
+    
+          <div class="example">
+            <strong>Exemple :</strong> {{ t.example }}
+          </div>
+    
+          <div class="tips">
+            <span class="pill" *ngFor="let tip of t.tips">{{ tip }}</span>
+          </div>
+  
+          <div class="quiz">
+            <p class="question">{{ t.quiz.question }}</p>
+            <button
+              *ngFor="let opt of t.quiz.options; let j = index"
+              (click)="chooseOption(i, j)"
+              [disabled]="done[i]"
+              [class.correct]="done[i] && j === t.quiz.correctIndex"
+              [class.incorrect]="done[i] && selected[i] === j && j !== t.quiz.correctIndex"
+            >
+              <span *ngIf="done[i] && j === t.quiz.correctIndex">✅</span>
+              <span *ngIf="done[i] && selected[i] === j && j !== t.quiz.correctIndex">❌</span>
+              {{ opt }}
+            </button>
+          
+            <div *ngIf="done[i]" class="feedback" [class.ok]="isCorrect(i)" [class.error]="!isCorrect(i)">
+              {{ isCorrect(i) ? '✅ Bonne réponse !' : '❌ Mauvaise réponse.' }}
+            </div>
+          
+            <div
+              class="explanation"
+              *ngIf="done[i]"
+              [ngClass]="{ ok: isCorrect(i), warn: !isCorrect(i) }"
+            >
+              {{ t.quiz.explanation }}
+            </div>
+          </div>
+          
+    
+          <!-- <div class="quiz">
+            <p class="question">{{ t.quiz.question }}</p>
+            <button
+              *ngFor="let opt of t.quiz.options; let j = index"
+              (click)="chooseOption(i, j)"
+              [class.correct]="done[i] && j === t.quiz.correctIndex"
+              [class.incorrect]="done[i] && selected[i] === j && j !== t.quiz.correctIndex"
+            >
+              <span *ngIf="done[i] && j === t.quiz.correctIndex">✅</span>
+              <span *ngIf="done[i] && selected[i] === j && j !== t.quiz.correctIndex">❌</span>
+              {{ opt }}
+            </button>
+    
+            <div class="explanation" *ngIf="done[i]">
+              <p [class.ok]="isCorrect(i)" [class.warn]="!isCorrect(i)">
+                {{ t.quiz.explanation }}
+              </p>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+    

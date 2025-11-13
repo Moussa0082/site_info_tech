@@ -1,0 +1,67 @@
+<section class="vl-singlevent-iner pb-50">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 mx-auto">
+          <div class="more-title text-center mb-5">
+            <h2 class="title fw-bold">Blog similaire</h2>
+          </div>
+        </div>
+      </div>
+  
+      <div class="row g-4">
+        @for (blog of blogs | slice: 0:3; track $index) {
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="blog-card shadow-sm rounded-3 overflow-hidden h-100 d-flex flex-column">
+            <div class="blog-thumb">
+              <a [routerLink]="['/blog-single', blog.idBlog]">
+                <img 
+                class="w-100"
+                *ngIf="blog.image" 
+                    [src]="getImageUrl(blog.image)" 
+                    alt="{{ blog.titre }}" 
+                    class="blog-image"
+                    (error)="handleImageError($event)"
+                 />
+              </a>
+            </div>
+  
+            <div class="blog-content p-3 flex-grow-1 d-flex flex-column">
+              <div class="blog-meta d-flex justify-content-between small text-muted mb-2">
+                <span>
+                  <i class="fa-regular fa-calendar me-1"></i> {{ blog.datePublication }}
+                </span>
+                <span>
+                  <i class="fa-regular fa-user me-1"></i> {{ blog.auteur }}
+                </span>
+              </div>
+  
+              <h3 class="title h5 mb-2 text-truncate" [title]="blog.titre">
+                <a
+                  [routerLink]="['/blog-single', blog.idBlog]" 
+                  class="text-dark text-decoration-none fw-semibold"
+                >
+                  {{ blog.titre }}
+                </a>
+              </h3>
+  
+              <p class="text-muted mb-3 two-lines">
+                {{ blog.description }}
+              </p>
+  
+              <div class="mt-auto">
+                <a
+                   [routerLink]="['/blog-single', blog.idBlog]" 
+                  class="btn btn-outline-primary btn-sm w-100"
+                >
+                  Lire plus <i class="fa-solid fa-arrow-right ms-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </section>
+  
+  <div style="margin-top: 8%;"></div>

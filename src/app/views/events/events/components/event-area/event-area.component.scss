@@ -1,0 +1,206 @@
+// .event-card {
+//     background: #fff;
+//     transition: all 0.3s ease;
+//     height: 100%;
+//     display: flex;
+//     flex-direction: column;
+//   }
+  
+//   .event-card:hover {
+//     transform: translateY(-6px);
+//     box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+//   }
+  
+//   .event-thumb img {
+//     height: 200px;
+//     width: 100%;
+//     object-fit: cover;
+//   }
+  
+//   .event-content {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-between;
+//     flex-grow: 1;
+//   }
+  
+//   /* Coupe les textes longs sur une seule ligne */
+//   .text-truncate {
+//     white-space: nowrap;
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+//   }
+  
+//   /* Coupe sur deux lignes max */
+//   .two-lines {
+//     display: -webkit-box;
+//     -webkit-line-clamp: 2; /* nombre de lignes max */
+//     -webkit-box-orient: vertical;
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+//     min-height: 40px; /* aide à l’uniformité visuelle */
+//   }
+  
+//   .event-content .title {
+//     font-weight: 600;
+//     text-decoration: none;
+//   }
+  
+//   .event-content .title:hover {
+//     color: #007bff;
+//   }
+
+
+
+
+/* Conteneur du calendrier */
+.calendar-container {
+  max-width: 100%;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Titre dans les cellules */
+.fc-event-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  max-width: 100px; /* ajuste selon ton design */
+  font-size: 13px;
+}
+
+/* Tooltip */
+.calendar-tooltip {
+  position: absolute;
+  z-index: 10000;
+  display: none;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  width: 220px;
+  pointer-events: none;
+}
+
+.calendar-tooltip .tooltip-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.calendar-tooltip img.thumb {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 5px;
+  object-fit: cover;
+}
+
+.calendar-tooltip strong {
+  font-size: 14px;
+  color: #333;
+}
+
+.calendar-tooltip small,
+.calendar-tooltip span {
+  color: #666;
+  font-size: 12px;
+}
+
+
+// .calendar-container {
+//   max-width: 1000px;
+//   margin: 40px auto;
+//   background: #fff;
+//   border-radius: 12px;
+//   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+//   padding: 20px;
+
+//   .fc {
+//     font-family: 'Inter', sans-serif;
+//   }
+
+//   .fc-toolbar-title {
+//     font-size: 1.3rem;
+//     font-weight: 600;
+//   }
+
+//   .fc-daygrid-event {
+//     border-radius: 6px;
+//     background-color: #1976d2;
+//     color: white;
+//     font-size: 0.85rem;
+//     padding: 2px 4px;
+//   }
+// }
+
+// .calendar-tooltip {
+//   position: absolute;
+//   background: white;
+//   border-radius: 10px;
+//   padding: 10px;
+//   width: 220px;
+//   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+//   z-index: 100;
+//   display: none;
+//   top: 40px;
+//   left: 0;
+//   pointer-events: none;
+// }
+
+// .fc-event:hover .calendar-tooltip {
+//   display: block;
+// }
+
+// .tooltip-content {
+//   .thumb {
+//     width: 100%;
+//     border-radius: 6px;
+//     margin-bottom: 5px;
+//   }
+//   strong {
+//     color: #333;
+//   }
+//   small, span {
+//     color: #777;
+//   }
+// }
+
+  
+// .calendar-tooltip {
+//   position: absolute;
+//   z-index: 9999;
+//   background: white;
+//   border: 1px solid #ddd;
+//   border-radius: 8px;
+//   padding: 8px;
+//   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+//   display: none;
+//   pointer-events: none;
+//   width: 180px;
+
+//   .tooltip-content {
+//     text-align: center;
+//   }
+
+//   .thumb {
+//     width: 100%;
+//     height: 80px;
+//     object-fit: cover;
+//     border-radius: 6px;
+//     margin-bottom: 5px;
+//   }
+// }
+
+// /* Affiche le tooltip au survol */
+// .fc-event:hover .calendar-tooltip {
+//   display: block;
+//   top: 100%;
+//   left: 50%;
+//   transform: translateX(-50%);
+// }
+
+// .fc-event {
+//   cursor: pointer;
+// }

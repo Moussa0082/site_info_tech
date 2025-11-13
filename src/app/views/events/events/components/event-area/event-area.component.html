@@ -1,0 +1,62 @@
+<!-- <section class="vl-singlevent-iner sp1">
+    <div class="container">
+      <div class="row g-4">
+        @for (item of eventAreaData; track $index) {
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div
+            class="event-card shadow-sm rounded-3 overflow-hidden h-100 d-flex flex-column"
+            [ngClass]="{ 'active': hoverIndex === $index }"
+            (mouseenter)="hoverIndex = $index"
+            (mouseleave)="hoverIndex = 0"
+          >
+            <div class="event-thumb">
+              <img class="w-100" [src]="item.image" alt="event image" />
+            </div>
+  
+            <div class="event-content p-3 flex-grow-1 d-flex flex-column">
+              <div class="event-date text-primary fw-bold mb-2 text-truncate">
+                {{ item.date }} {{ item.month }} {{ item.year }}
+              </div>
+  
+              <a
+                routerLink="/event-single"
+                class="title h5 d-block mb-2 text-dark text-truncate"
+                [title]="item.eventTitle"
+              >
+                {{ item.eventTitle }}
+              </a>
+  
+              <p class="para text-muted small mb-2 text-truncate">
+                <i class="fa-regular fa-clock me-1"></i>{{ item.eventTime }}
+              </p>
+  
+              <p class="para text-muted small mb-3 two-lines">
+                <i class="fa-solid fa-location-dot me-1"></i>{{ item.location }}
+              </p>
+  
+              <div class="mt-auto">
+                <a
+                  routerLink="/event-single"
+                  class="details btn btn-outline-primary btn-sm w-100"
+                >
+                  Lire plus <i class="fa-solid fa-arrow-right ms-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </section>
+  
+
+  <div style="margin-top: 5%;"></div> -->
+
+
+
+<div class="calendar-container">
+  <full-calendar [options]="calendarOptions"></full-calendar>
+</div>
+
+ <div style="margin-top: 15%;"></div>

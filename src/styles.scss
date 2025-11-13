@@ -1,0 +1,70 @@
+@import "../node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.min.css";
+
+@import "aos/dist/aos.css";
+@import "slick-carousel/slick/slick.css";
+@import "glightbox/dist/css/glightbox.min.css";
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "../public/assets/scss/main.scss";
+
+
+/* Pour rendre le header sticky */
+.fixed-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1050; /* reste au-dessus du contenu */
+  }
+  
+  /* Ajuste la hauteur pour éviter que le contenu ne soit caché */
+  body {
+    padding-top: 90px; /* ajuste selon la hauteur de ton header */
+  }
+  
+  /* Optionnel : transition douce quand on scrolle */
+  .header-sticky {
+    transition: all 0.3s ease;
+  }
+  
+  
+  /* ============================= */
+/* 🔥 Forcer couleur blanche sur tout le menu */
+header.header-area li,
+header.header-area a,
+header.header-area li a,
+header.header-area .main-menu ul li a {
+  color: #fff !important;
+  background: transparent !important;
+}
+
+/* 🔥 Supprimer tout effet hover ou focus venant du template */
+header.header-area li:hover,
+header.header-area a:hover,
+header.header-area li:focus,
+header.header-area a:focus,
+header.header-area li.active a,
+header.header-area li[routerLinkActive].active a,
+header.header-area .main-menu ul li:hover > a,
+header.header-area .main-menu ul li a:hover {
+  color: #fff !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  text-shadow: none !important;
+  filter: none !important;
+}
+
+/* 🔥 Neutraliser pseudo-éléments */
+header.header-area .main-menu ul li a::before,
+header.header-area .main-menu ul li a::after {
+  background: none !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+/* 🔥 Neutraliser les sous-menus */
+header.header-area .tp-submenu a,
+header.header-area .tp-submenu li a:hover {
+  color: #fff !important;
+  background: transparent !important;
+}

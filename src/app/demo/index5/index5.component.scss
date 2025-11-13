@@ -1,0 +1,19 @@
+.mobile-header {
+    background-color: #01715D !important;
+    transition: all 0.3s ease;
+  }
+
+  .blanc{
+    color: white;
+  }
+
+  /* Mobile menu icon blanc */
+.mobile-nav-icon3 i {
+    color: #fff !important;
+    // font-size: 24px; /* tu peux ajuster la taille si besoin */
+}
+
+/* Optionnel : changer le background de l'icône si nécessaire */
+.mobile-nav-icon3 {
+    background: transparent;
+}
