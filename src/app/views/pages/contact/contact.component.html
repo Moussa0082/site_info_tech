@@ -37,16 +37,32 @@
 
           <!-- formulaire -->
           <div class="vl-form-inner">
-            <form action="#">
+            <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
               <div class="row">
                 <div class="col-lg-6">
-                  <input type="text" placeholder="Prénom*" />
+                  <input
+                    type="text"
+                    placeholder="Prénom*"
+                    [(ngModel)]="contact.firstName"
+                    name="firstName"
+                  />
                 </div>
                 <div class="col-lg-6">
-                  <input type="text" placeholder="Nom*" />
+                  <input
+                    type="text"
+                    placeholder="Nom*"
+                    [(ngModel)]="contact.lastName"
+                    name="lastName"
+                  />
                 </div>
                 <div class="col-lg-12">
-                  <input type="email" placeholder="Adresse Email*" />
+                  <input
+                    type="email"
+                    placeholder="Adresse Email*"
+                    [(ngModel)]="contact.email"
+                    name="email"
+                    required=""
+                  />
                 </div>
 
                 <div class="col-lg-12">
@@ -54,11 +70,17 @@
                     name="message"
                     id="message"
                     placeholder="Comment pouvons-nous vous aider ?*"
+                    [(ngModel)]="contact.message"
+                    name="message"
                   ></textarea>
                 </div>
                 <div class="col-lg-12">
                   <div class="btn-area">
-                    <button class="header-btn1">
+                    <button
+                      class="header-btn1"
+                      [disabled]="isSending"
+                      type="submit"
+                    >
                       Envoyer
                       <span><i class="fa-solid fa-arrow-right"></i></span>
                     </button>

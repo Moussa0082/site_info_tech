@@ -12,8 +12,6 @@
 // import { environment } from '../../../../../../environments/environment';
 // import { UtilsService } from '../../../../../service/utils.service';
 
-
-
 // const MONTH_MAP: any = {
 //   JAN: '01',
 //   FEB: '02',
@@ -45,11 +43,11 @@
 //   constructor(private router: Router,private eventService:EventService,
 //    private utils:UtilsService
 //     ) {}
-  
+
 //      getImageUrl(path: string) {
 //       return this.utils.getImageUrl(path);
 //     }
-  
+
 //     handleImageError(event: any) {
 //       this.utils.handleImageError(event);
 //     }
@@ -70,7 +68,6 @@
 
 //     });
 //   }
-
 
 //   // On transforme tes événements JSON en format FullCalendar
 //   // events = eventArea.map(e => ({
@@ -94,7 +91,6 @@
 // //     time: e.eventTime
 // //   }
 // // }));
-
 
 //   calendarOptions: CalendarOptions = {
 //     initialView: 'dayGridMonth',
@@ -154,7 +150,7 @@ import { UtilsService } from '../../../../../service/utils.service';
   selector: 'app-event-area',
   imports: [CommonModule, FullCalendarModule],
   templateUrl: './event-area.component.html',
-  styleUrl: './event-area.component.scss'
+  styleUrl: './event-area.component.scss',
 })
 export class EventAreaComponent implements OnInit {
   events: any[] = [];
@@ -168,7 +164,7 @@ export class EventAreaComponent implements OnInit {
     headerToolbar: {
       left: 'prev,next today',
       center: 'title',
-      right: ''
+      right: '',
     },
     events: [], // <-- vide au départ
     eventClick: (info) => this.onEventClick(info),
@@ -191,7 +187,7 @@ export class EventAreaComponent implements OnInit {
         // 🔹 Transformer les données pour FullCalendar
         const events = res.map((e: MyEvent) => ({
           id: e.idEvent,
-          title: e.titre,               // 🔹 Affiche seulement le titre
+          title: e.titre,
           start: e.dateDebutEvent,
           // end: e.dateFinEvent,
         }));
@@ -210,13 +206,13 @@ export class EventAreaComponent implements OnInit {
           eventClick: (info) => this.onEventClick(info),
         };
       },
-      error: (err) => console.error('Erreur chargement événements :', err)
+      error: (err) => console.error('Erreur chargement événements :', err),
     });
   }
 
   onEventClick(info: any) {
     const id = info.event.id;
-    console.log("Event cliqué", info.event)
+    console.log('Event cliqué', info.event);
     if (id) {
       this.router.navigate(['/event-single', id]); // 🔹 Redirection vers la page détail
     }
