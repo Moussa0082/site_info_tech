@@ -60,3 +60,10 @@
     border-radius: 6px;
   }
   
+ .one-lines {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* 2 lignes max */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -4,19 +4,24 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { MyEvent } from '../../../../../models/Events';
 import { EventService } from '../../../../../service/events.service';
 import { UtilsService } from '../../../../../service/utils.service';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-event-sidebar-area',
   imports: [CommonModule,RouterLink],
   templateUrl: './event-sidebar-area.component.html',
-  styles: ``
+  styles: ``,
+   styleUrl: './event-sidebar-area.component.scss',
 })
 export class EventSidebarAreaComponent implements OnInit{
   
   ev!: MyEvent;
    loading = false;
      id!: string;
+     htmlContent!: SafeHtml;
      constructor(
+       private sanitizer: DomSanitizer,
     private eventsService: EventService,
     private router: Router,
     private route: ActivatedRoute,

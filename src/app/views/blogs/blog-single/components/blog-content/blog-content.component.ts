@@ -6,6 +6,7 @@ import { Blog } from '../../../../../models/Blog';
 import { BlogService } from '../../../../../service/blogs.service';
 import { environment } from '../../../../../../environments/environment';
 import { UtilsService } from '../../../../../service/utils.service';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-blog-content',
@@ -15,13 +16,13 @@ import { UtilsService } from '../../../../../service/utils.service';
    styleUrl: './blog-content.component.scss'
 })
 export class BlogContentComponent implements OnInit {
-  // blogs = blogs
   blogs: Blog[] = [];
   loading = false;
-  //  id!: string;
+  htmlContent!: SafeHtml;
      currentBlogId!: string;
 
   constructor(
+    private sanitizer: DomSanitizer,
     private blogService: BlogService,
     private router: Router,
     private route:ActivatedRoute,
@@ -53,12 +54,24 @@ export class BlogContentComponent implements OnInit {
     this.loading = true;
     this.blogService.getSimilarBlogs(idBlog).subscribe(
        (res) => {
-        this.blogs = res;
+         this.blogs = res.map(blog => ({
+          ...blog,
+          // shortDescription: this.stripHtml(blog.description),
+          safeDescription: this.sanitizer.bypassSecurityTrustHtml(blog.description)
+        }));
+
         this.loading = false;
       },
       (error) => {
         this.loading = false;
     });
   }
+
+    stripHtml(html: string): string {
+    const tmp = document.createElement('div');
+    tmp.innerHTML = html;
+    return tmp.textContent || tmp.innerText || '';
+  }
+
  
 }

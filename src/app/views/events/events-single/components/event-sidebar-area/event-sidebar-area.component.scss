@@ -1,0 +1,20 @@
+
+// .image{
+//     height: 5%;
+//     width: 80%;
+// }
+
+.vl-large-thumb {
+  display: flex;
+  justify-content: center; /* centre horizontalement */
+  align-items: center; /* centre verticalement si hauteur définie */
+  margin-bottom: 20px;
+}
+
+.event-image {
+  width: 450px; /* largeur fixe */
+  height: 300px; /* hauteur fixe */
+  object-fit: cover; /* coupe l’image sans la déformer */
+  border-radius: 10px; /* optionnel : coins arrondis */
+//   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* optionnel : petite ombre */
+}

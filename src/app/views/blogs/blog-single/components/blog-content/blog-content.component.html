@@ -44,9 +44,10 @@
                 </a>
               </h3>
   
-              <p class="text-muted mb-3 two-lines">
-                {{ blog.description }}
-              </p>
+             <p class="text-muted mb-3 one-line" [title]="blog.description" [innerHTML]="blog.description" >
+  <!-- {{ blog.description }} -->
+</p>
+
   
               <div class="mt-auto">
                 <a

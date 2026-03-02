@@ -4,7 +4,7 @@
     <div class="col-lg-8 mx-auto">
       <div class="vl-event-content-area ml-50">
         <div class="vl-large-thumb">
-         <img class="w-100"
+         <img class="image"
      *ngIf="blogs?.image" 
      [src]="getImageUrl(blogs.image)" 
      alt="{{ blogs?.titre }}" 
@@ -14,19 +14,19 @@
 
         <div class="vl-blog-meta-box mt-32">
           <ul>
-            <li><a href="javascript:void(0);"> <span><img src="assets/img/blog/vl-blog-auth-thumb-1.1.png" alt=""></span> {{blogs?.auteur}} </a>
-            </li>
-            <li><a href="javascript:void(0);"> <span class="icon"><img class="mt-4-" src="assets/img/icons/vl-calender-1.1.svg"
-                    alt=""></span> {{blogs?.datePublication}}</a></li>
-            <li><a href="javascript:void(0);"> <span class="icon"><img class="mt-4-" src="assets/img/icons/vl-tags.svg" alt=""></span>
-                 {{blogs?.titre}}</a></li>
+            <!-- <li><a href="javascript:void(0);"> <span><img src="assets/img/blog/vl-blog-auth-thumb-1.1.png" alt=""></span> {{blogs?.auteur}} </a>
+            </li> -->
+            <li *ngIf="blogs.dateCreation"><a href="javascript:void(0);"> <span class="icon"><img class="mt-4-" src="assets/img/icons/vl-calender-1.1.svg"
+                    alt=""></span> Publié le : {{blogs?.dateCreation}}</a></li>
+            <li *ngIf="blogs.auteur"><a href="javascript:void(0);"> <span class="icon"><img class="mt-4-" src="assets/img/icons/vl-tags.svg" alt=""></span>
+                 {{blogs?.auteur}}</a></li>
             <!-- <li><a href="javascript:void(0);"> <span class="icon"><img class="mt-4-" src="assets/img/icons/vl-chatting-icon.svg"
                     alt=""></span>2 comments</a></li> -->
           </ul>
         </div>
         
-        <div class="vl-event-content vl-blg-content">
-         <p> {{blogs?.description}}</p>
+        <div class="vl-event-content vl-blg-content" [innerHTML]="htmlContent">
+         
         </div>
 
         <!-- <div class="vl-event-content vl-blg-content">

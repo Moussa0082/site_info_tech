@@ -5,6 +5,7 @@ import { Blog } from '../../../../../models/Blog';
 import { environment } from '../../../../../../environments/environment';
 import { CommonModule } from '@angular/common';
 import { UtilsService } from '../../../../../service/utils.service';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-blog-sidebar',
@@ -14,12 +15,13 @@ import { UtilsService } from '../../../../../service/utils.service';
 })
 export class BlogSidebarComponent implements OnInit{
 
-  // blogs = blogs
+  htmlContent!: SafeHtml;
   blogs!: Blog;
   loading = false;
     id!: string;
 
   constructor(
+    private sanitizer: DomSanitizer,
     private blogService: BlogService,
     private router: Router,
     private route: ActivatedRoute,
@@ -45,6 +47,8 @@ export class BlogSidebarComponent implements OnInit{
     this.blogService.getBlogById(idBlog).subscribe(
        (res) => {
         this.blogs = res;
+        // res.description contient du HTML produit par CKEditor
+      this.htmlContent = this.sanitizer.bypassSecurityTrustHtml(res.description);
         this.loading = false;
       },
       (error) => {

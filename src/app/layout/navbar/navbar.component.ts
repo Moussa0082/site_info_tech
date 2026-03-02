@@ -93,6 +93,7 @@ export class NavbarComponent implements OnInit{
       }
     },
     error: (err) =>{
+      console.log("Erreur chargement head image Home : ", err);
     } 
   });
 }

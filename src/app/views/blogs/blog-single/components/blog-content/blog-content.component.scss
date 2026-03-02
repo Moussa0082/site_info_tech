@@ -58,3 +58,11 @@
     color: #fff;
   }
   
+
+  .one-line {
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* limite à 1 ligne */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

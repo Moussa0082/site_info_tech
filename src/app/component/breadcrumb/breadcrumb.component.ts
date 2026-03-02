@@ -5,7 +5,8 @@ import { Component, Input } from '@angular/core';
   selector: 'app-breadcrumb',
   imports: [CommonModule],
   templateUrl: './breadcrumb.component.html',
-  styles: ``
+  styles: ``,
+   styleUrl: './breadcrumb.component.scss',
 })
 export class BreadcrumbComponent {
   @Input() backgroundImage: string = '';

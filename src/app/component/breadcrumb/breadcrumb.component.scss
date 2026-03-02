@@ -1,0 +1,16 @@
+.vl-breadcrumb {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  position: relative;
+}
+
+/* Pour améliorer la qualité sur les écrans HD */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .v1-breadcrumb {
+    background-size: cover;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}

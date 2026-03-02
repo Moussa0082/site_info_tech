@@ -149,16 +149,19 @@ import { EventService } from '../../../../../service/events.service';
 import { MyEvent } from '../../../../../models/Events';
 import { environment } from '../../../../../../environments/environment';
 import { UtilsService } from '../../../../../service/utils.service';
+import { HeadImageService } from '../../../../../service/headimage.service';
+import { BreadcrumbComponent } from "../../../../../component/breadcrumb/breadcrumb.component";
 
 @Component({
   selector: 'app-event-area',
-  imports: [CommonModule, FullCalendarModule],
+  imports: [CommonModule, FullCalendarModule, BreadcrumbComponent],
   templateUrl: './event-area.component.html',
   styleUrl: './event-area.component.scss'
 })
 export class EventAreaComponent implements OnInit {
   events: any[] = [];
   apiUrl: any = environment.apiUrl;
+   backgroundUrl: string = '';
 
   calendarOptions: CalendarOptions = {
     initialView: 'dayGridMonth',
@@ -182,6 +185,7 @@ export class EventAreaComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+ 
     this.loadEvents();
   }
 
