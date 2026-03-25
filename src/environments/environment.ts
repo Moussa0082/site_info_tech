@@ -5,7 +5,6 @@
 export const environment = {
   production: false,
   apiUrl: 'https://tuwindi.app/api/info-tech/api-infotech',
-  // apiUrl1: 'https://tuwindi.app:8443/nepal'
 };
 
 /*
